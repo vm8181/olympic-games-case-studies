@@ -1,4 +1,6 @@
 # olympic-games-case-studies
+https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
+
 How many olympics games have been held?
 
 List down all Olympics games held so far.
