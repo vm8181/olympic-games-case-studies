@@ -3,6 +3,8 @@ https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 
 How many olympics games have been held?
 
+![image](https://user-images.githubusercontent.com/92555446/187253333-980354c9-ef31-4d83-bc80-6269372bb80f.png)
+
 List down all Olympics games held so far.
 
 Mention the total no of nations who participated in each olympics game?
