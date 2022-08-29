@@ -1,6 +1,18 @@
 # case-studies Olympic Games 1896-2016
 https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 
+Hockey	India	1948 Summer	20
+Hockey	India	1936 Summer	19
+Hockey	India	1956 Summer	17
+Hockey	India	1968 Summer	16
+Hockey	India	1980 Summer	16
+Hockey	India	1964 Summer	15
+Hockey	India	1932 Summer	15
+Hockey	India	1928 Summer	14
+Hockey	India	1952 Summer	14
+Hockey	India	1972 Summer	14
+Hockey	India	1960 Summer	13
+
 **How many olympics games have been held?**
 
 ![image](https://user-images.githubusercontent.com/92555446/187253333-980354c9-ef31-4d83-bc80-6269372bb80f.png)
