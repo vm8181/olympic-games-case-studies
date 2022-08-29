@@ -14,6 +14,9 @@ https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 ![image](https://user-images.githubusercontent.com/92555446/187254174-157b1a49-09bb-4d88-99b5-7556ab31f0f7.png)
 
 **Which year saw the highest and lowest no of countries participating in olympics?**
+![image](https://user-images.githubusercontent.com/92555446/187255272-cfaca2e9-ffdf-449b-b3c5-e23d9c75aebc.png)
+
+![image](https://user-images.githubusercontent.com/92555446/187255345-efca3895-b331-4971-80dc-1cc6b8297e5e.png)
 
 
 
