@@ -1,6 +1,6 @@
 # case-studies Olympic Games 1896-2016
 https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
-
+#ffffff
 **How many olympics games have been held?**
 
 ![image](https://user-images.githubusercontent.com/92555446/187253333-980354c9-ef31-4d83-bc80-6269372bb80f.png)
