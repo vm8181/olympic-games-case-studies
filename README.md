@@ -1,5 +1,13 @@
 # case-studies Olympic Games 1896-2016
+
+![image](https://user-images.githubusercontent.com/92555446/187437164-b0bbad30-97d4-4ce5-a835-2de27a39bedf.png)
+
+## Dataset: 
+
 https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
+
+## Requirement:
+**We have dataset in the CSV format we need to import it into database and have to extract important information to get the idea about games and sportsperson, countries participants in each session. The below is problem statements which we need to solve using structure query.**
 
 **How many olympics games have been held?**
 
@@ -115,4 +123,7 @@ https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 **Break down all olympic games where india won medal for Hockey and how many medals in each olympic games.**
 
 ![image](https://user-images.githubusercontent.com/92555446/187260341-afcefc68-c5aa-45f0-bd20-b87660effd12.png)
+
+Tool Used:
+Microsoft Excel, SQL and SQL Server RDBMS
 
