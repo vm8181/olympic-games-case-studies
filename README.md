@@ -7,7 +7,7 @@
 https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 
 ## Requirement:
-**We have dataset in the CSV format we need to import it into database and have to extract important information to get the idea about games and sportsperson, countries participants in each session. The below is problem statements which we need to solve using structure query.**
+**We have dataset in the CSV format we need to import it into database and have to extract important information to get the idea about games and sportsperson, countries participants in each session. The below is problem statements which we need to solve using structure query language.**
 
 **How many olympics games have been held?**
 
