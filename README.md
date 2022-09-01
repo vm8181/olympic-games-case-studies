@@ -17,33 +17,38 @@ https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 ![image](https://user-images.githubusercontent.com/92555446/187254051-bd90dc97-96b1-4ad1-bca6-b8002c39cb29.png)
 
 :red_circle: **Mention the total no of nations who participated in each olympics game?**
+
 ![image](https://user-images.githubusercontent.com/92555446/187254174-157b1a49-09bb-4d88-99b5-7556ab31f0f7.png)
 
 :red_circle: **Which year saw the highest and lowest no of countries participating in olympics?**
+
 ![image](https://user-images.githubusercontent.com/92555446/187255272-cfaca2e9-ffdf-449b-b3c5-e23d9c75aebc.png)
 ![image](https://user-images.githubusercontent.com/92555446/187255345-efca3895-b331-4971-80dc-1cc6b8297e5e.png)
 
 :red_circle: **Which nation has participated in all of the olympic games?**
+
 ![image](https://user-images.githubusercontent.com/92555446/187255921-754d70ec-16f9-457e-a148-f2f800f39315.png)
 ![image](https://user-images.githubusercontent.com/92555446/187256011-cd6fab9c-1344-4f5b-bdd0-1146497e6ca8.png)
 
 :red_circle: **Identify the sport which was played in all summer olympics.**
+
 ![image](https://user-images.githubusercontent.com/92555446/187256062-3ea283f1-05c4-4d97-a516-315e861e77f8.png)
 ![image](https://user-images.githubusercontent.com/92555446/187256115-e552043a-9f6e-44d9-8076-a8b1315150bc.png)
 
 :red_circle: **Which Sports were just played only once in the olympics?**
+
 ![image](https://user-images.githubusercontent.com/92555446/187256226-94db2b7f-0878-4f57-9915-6548cf0694be.png)
 ![image](https://user-images.githubusercontent.com/92555446/187256329-dbcfc120-41c8-4e5d-8a6f-24df75bbdc33.png)
 
 :red_circle: **Fetch the total no of sports played in each olympic games.**
+
 ![image](https://user-images.githubusercontent.com/92555446/187256434-1b366013-c197-4862-a1c0-d000dac772c0.png)
 ![image](https://user-images.githubusercontent.com/92555446/187256495-0daed539-3272-4aad-9fec-bc557cd2b630.png)
 
 
-**Fetch details of the oldest athletes to win a gold medal.**
+:red_circle: **Fetch details of the oldest athletes to win a gold medal.**
 
 ![image](https://user-images.githubusercontent.com/92555446/187256596-c2b52e8a-414d-403a-a784-3d58d1a1015e.png)
-
 ![image](https://user-images.githubusercontent.com/92555446/187256647-376e1740-016e-4e66-abd8-0231c9d5bf4d.png)
 
 **Find the Ratio of male and female athletes participated in all olympic games.**
