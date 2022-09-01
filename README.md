@@ -20,7 +20,6 @@ https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 :red_circle: **Mention the total no of nations who participated in each olympics game?**
 
 ![image](https://user-images.githubusercontent.com/92555446/187254174-157b1a49-09bb-4d88-99b5-7556ab31f0f7.png)
-
 :red_circle: **Which year saw the highest and lowest no of countries participating in olympics?**
 
 ![image](https://user-images.githubusercontent.com/92555446/187255272-cfaca2e9-ffdf-449b-b3c5-e23d9c75aebc.png)
