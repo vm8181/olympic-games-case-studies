@@ -9,48 +9,34 @@ https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 ## Requirement:
 **We have dataset in the CSV format we need to import it into database and have to extract important information to get the idea about games and sportsperson, countries participants in each session. The below is problem statements which we need to solve using structure query language.**
 
-**How many olympics games have been held?**
-
+:red_circle: **How many olympics games have been held?**
 ![image](https://user-images.githubusercontent.com/92555446/187253333-980354c9-ef31-4d83-bc80-6269372bb80f.png)
 
-**List down all Olympics games held so far.**
+:red_circle: **List down all Olympics games held so far.**
 
 ![image](https://user-images.githubusercontent.com/92555446/187254051-bd90dc97-96b1-4ad1-bca6-b8002c39cb29.png)
 
-**Mention the total no of nations who participated in each olympics game?**
-
+:red_circle: **Mention the total no of nations who participated in each olympics game?**
 ![image](https://user-images.githubusercontent.com/92555446/187254174-157b1a49-09bb-4d88-99b5-7556ab31f0f7.png)
 
-**Which year saw the highest and lowest no of countries participating in olympics?**
+:red_circle: **Which year saw the highest and lowest no of countries participating in olympics?**
 ![image](https://user-images.githubusercontent.com/92555446/187255272-cfaca2e9-ffdf-449b-b3c5-e23d9c75aebc.png)
-
 ![image](https://user-images.githubusercontent.com/92555446/187255345-efca3895-b331-4971-80dc-1cc6b8297e5e.png)
 
-
-
-**Which nation has participated in all of the olympic games?**
-
+:red_circle: **Which nation has participated in all of the olympic games?**
 ![image](https://user-images.githubusercontent.com/92555446/187255921-754d70ec-16f9-457e-a148-f2f800f39315.png)
-
 ![image](https://user-images.githubusercontent.com/92555446/187256011-cd6fab9c-1344-4f5b-bdd0-1146497e6ca8.png)
 
-
-**Identify the sport which was played in all summer olympics.**
-
+:red_circle: **Identify the sport which was played in all summer olympics.**
 ![image](https://user-images.githubusercontent.com/92555446/187256062-3ea283f1-05c4-4d97-a516-315e861e77f8.png)
-
 ![image](https://user-images.githubusercontent.com/92555446/187256115-e552043a-9f6e-44d9-8076-a8b1315150bc.png)
 
-**Which Sports were just played only once in the olympics?**
-
+:red_circle: **Which Sports were just played only once in the olympics?**
 ![image](https://user-images.githubusercontent.com/92555446/187256226-94db2b7f-0878-4f57-9915-6548cf0694be.png)
-
 ![image](https://user-images.githubusercontent.com/92555446/187256329-dbcfc120-41c8-4e5d-8a6f-24df75bbdc33.png)
 
-**Fetch the total no of sports played in each olympic games.**
-
+:red_circle: **Fetch the total no of sports played in each olympic games.**
 ![image](https://user-images.githubusercontent.com/92555446/187256434-1b366013-c197-4862-a1c0-d000dac772c0.png)
-
 ![image](https://user-images.githubusercontent.com/92555446/187256495-0daed539-3272-4aad-9fec-bc557cd2b630.png)
 
 
