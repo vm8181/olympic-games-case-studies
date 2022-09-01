@@ -10,6 +10,7 @@ https://techtfq.com/blog/practice-writing-sql-queries-using-real-dataset
 **We have dataset in the CSV format we need to import it into database and have to extract important information to get the idea about games and sportsperson, countries participants in each session. The below is problem statements which we need to solve using structure query language.**
 
 :red_circle: **How many olympics games have been held?**
+
 ![image](https://user-images.githubusercontent.com/92555446/187253333-980354c9-ef31-4d83-bc80-6269372bb80f.png)
 
 :red_circle: **List down all Olympics games held so far.**
