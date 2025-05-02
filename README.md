@@ -1,4 +1,4 @@
-# case-studies Olympic Games 1896-2016
+# Case-study Olympic Games 1896-2016
 
 
 ![image](https://user-images.githubusercontent.com/92555446/187437164-b0bbad30-97d4-4ce5-a835-2de27a39bedf.png)
@@ -75,6 +75,9 @@ from
 ) total_nations;
 
 ```
+Total_games
+51
+
 :red_circle: **Which nation has participated in all of the olympic games?**
 
 **SQL Query**
