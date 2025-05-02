@@ -1,13 +1,18 @@
 # case-studies Olympic Games 1896-2016
 
+
 ![image](https://user-images.githubusercontent.com/92555446/187437164-b0bbad30-97d4-4ce5-a835-2de27a39bedf.png)
 
+#### A complete SQL-based case study on the Olympic Games from 1896 to 2016. This dataset analyzes athletes, sports, nations, and medals using SQL queries.
 
-## Requirement:
-**We have dataset in the CSV format we need to import it into database and have to extract important information to get the idea about games and sportsperson, countries participants in each session. The below is problem statements which we need to solve using structure query language.**
+## 📂 Dataset Tables Used
+- `OLYMPICS_HISTORY`: Contains athlete-level Olympic participation and performance data.
+- `OLYMPICS_HISTORY_NOC_REGIONS`: Maps NOC codes to country names (regions).
 
 :red_circle: **How many olympics games have been held?**
+
 **SQL Query**
+
 ```sql
 select 
 	count(distinct Games) Total_games 
@@ -16,6 +21,7 @@ from
 ```
 
 :red_circle: **List down all Olympics games held so far.**
+
 **SQL Query**
 ```sql
 select distinct
