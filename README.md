@@ -14,10 +14,7 @@
 **SQL Query**
 
 ```sql
-select 
-	count(distinct Games) Total_games 
-from 
-	OLYMPICS_HISTORY;
+select count(distinct Games) Total_games from OLYMPICS_HISTORY;
 ```
 **Sample Output:**
 | Total_games |
@@ -30,7 +27,7 @@ from
 **SQL Query**
 ```sql
 select distinct
-    Games as Olympic_Games
+Games as Olympic_Games
 from OLYMPICS_HISTORY
 order by Olympic_Games asc;
 ```
@@ -55,10 +52,10 @@ order by Olympic_Games asc;
 **SQL Query**
 ```sql
 select o.Games,
-       count(distinct n.region) total_nations
+count(distinct n.region) total_nations
 from OLYMPICS_HISTORY_NOC_REGIONS n
-    join OLYMPICS_HISTORY o
-        on n.NOC = o.NOC
+join OLYMPICS_HISTORY o
+on n.NOC = o.NOC
 group by Games;
 ```
 **Sample Output:**
@@ -82,30 +79,15 @@ group by Games;
 **SQL Query**
 ```sql
 select distinct
-    concat(
-              first_value(games) over (order by total_nations),
-              '-',
-              first_value(total_nations) over (order by total_nations)
-          ) lowest_no_of_countries,
-	concat(
-				first_value(games) over(order by total_nations desc),
-				'-',
-				first_value(total_nations) over(order by total_nations desc)
-				) highest_no_of_countries
+concat(first_value(games) over (order by total_nations),'-',first_value(total_nations) over (order by total_nations)) lowest_no_of_countries,
+concat(first_value(games) over(order by total_nations desc),'-',first_value(total_nations) over(order by total_nations desc)) highest_no_of_countries
 from
-(
-    select games,
-           count(region) total_nations
-    from
-    (
-        select distinct
-            games,
-            region
-        from OLYMPICS_HISTORY_NOC_REGIONS n
-            join OLYMPICS_HISTORY o
-                on n.NOC = o.NOC
-    ) all_nations
-    group by Games
+(select games,
+count(region) total_nations
+from
+(select distinct games, region from OLYMPICS_HISTORY_NOC_REGIONS n
+join OLYMPICS_HISTORY o on n.NOC = o.NOC) all_nations
+group by Games
 ) total_nations;
 
 ```
@@ -118,18 +100,13 @@ from
 
 **SQL Query**
 ```sql
-with c
-as (select nr.region as Nations,
-           count(distinct oh.Games) Total_participated_games,
-           dense_rank() over (order by count(distinct oh.Games) desc) ranking
-    from OLYMPICS_HISTORY_NOC_REGIONS nr
-        join OLYMPICS_HISTORY oh
-            on oh.NOC = nr.NOC
-    group by region
-   )
-select c.Nations,
-       c.Total_participated_games
-from c
+with c as (
+select nr.region as Nations, count(distinct oh.Games) Total_participated_games,
+dense_rank() over (order by count(distinct oh.Games) desc) ranking
+from OLYMPICS_HISTORY_NOC_REGIONS nr
+join OLYMPICS_HISTORY oh on oh.NOC = nr.NOC
+group by region)
+select c.Nations, c.Total_participated_games from c
 where ranking = 1
 
 ```
@@ -145,23 +122,11 @@ where ranking = 1
 
 **SQL Query**
 ```sql
-select Sport,
-       no_of_games
-from
-(
-    select Sport,
-           count(1) as no_of_games,
-           DENSE_RANK() over (order by count(Sport) desc) as 'rank'
-    from
-    (
-        select distinct
-            Games,
-            Sport
-        from OLYMPICS_HISTORY
-        where Season = 'Summer'
-    ) t1
-    group by Sport
-) t2
+select Sport, no_of_games
+from ( select Sport, count(1) as no_of_games, DENSE_RANK() over (order by count(Sport) desc) as 'rank'
+from( select distinct Games, Sport from OLYMPICS_HISTORY
+where Season = 'Summer') t1
+group by Sport) t2
 where rank = 1;
 
 ```
@@ -179,21 +144,13 @@ where rank = 1;
 
 **SQL Query**
 ```sql
-select distinct
-    a.Sport,
-    no_of_sport,
-    oh.games
-from
-(
-    select sport,
-           count(sport) no_of_sport
-    from
-    (select  distinct games, sport from OLYMPICS_HISTORY) t
-    group by sport
-    having count(sport) = 1
-) a
-    join OLYMPICS_HISTORY oh
-        on a.Sport = oh.Sport;
+select distinct a.Sport, no_of_sport, oh.games
+from ( select sport, count(sport) no_of_sport
+from (select  distinct games, sport from OLYMPICS_HISTORY) t
+group by sport
+having count(sport) = 1) a
+join OLYMPICS_HISTORY oh
+on a.Sport = oh.Sport;
 
 ```
 **Sample Output:**
@@ -214,9 +171,7 @@ from
 
 **SQL Query**
 ```sql
-select  
-	Games, 
-	count(distinct sport) no_of_sports 
+select Games, count(distinct sport) no_of_sports 
 from OLYMPICS_HISTORY 
 group by games 
 order by no_of_sports desc;
@@ -244,38 +199,16 @@ order by no_of_sports desc;
 
 **SQL Query**
 ```sql
-with t1
-as (select max(   cast(case
-                           when age = 'NA' then
-                               0
-                           else
-                               age
-                       end as int)
-              ) max_age_gold_winner
-    from OLYMPICS_HISTORY
-    where Medal = 'Gold'
-   ),
-     t2
-as (select oh.Name,
-           oh.Sex,
-           cast(case
-                    when age = 'NA' then
-                        0
-                    else
-                        age
-                end as int) as Aged,
-           oh.Team,
-           oh.Games,
-           oh.City,
-           oh.Sport,
-           oh.Event,
-           oh.Medal
-    from OLYMPICS_HISTORY oh
-   )
-select t2.*
-from t2
-    join t1
-        on t2.Aged = t1.max_age_gold_winner
+with t1 as (
+select max(cast(case when age = 'NA' then 0 else age end as int)) max_age_gold_winner
+from OLYMPICS_HISTORY
+where Medal = 'Gold'),
+t2 as (
+select oh.Name, oh.Sex, cast(case when age = 'NA' then 0 else age end as int) as Aged,
+oh.Team, oh.Games, oh.City, oh.Sport, oh.Event, oh.Medal
+from OLYMPICS_HISTORY oh)
+select t2.* from t2
+join t1 on t2.Aged = t1.max_age_gold_winner
 where Medal = 'gold';
 
 ```
@@ -291,20 +224,8 @@ where Medal = 'gold';
 **SQL Query**
 ```sql
 select  concat(Female / Female,' : ',round(Male/Female,2)) Ratio_of_FemaleMale
-from
-(
-    select cast(count(   case
-                        when Sex = 'M' then
-                            1
-                    end
-                ) as float) as Male,
-           count(   case
-                        when Sex = 'F' then
-                            1
-                    end
-                )as Female
-    from OLYMPICS_HISTORY
-) a
+from (Select cast(count(case when Sex = 'M' then 1 end) as float) as Male,
+	count(case when Sex = 'F' then 1 end as Female from OLYMPICS_HISTORY) a
 
 ```
 **Sample Output:**
@@ -315,19 +236,12 @@ from
 :red_circle: **Fetch the athletes who have won the most gold medals.**
 ```sql
 with t1 as (
-	select 
-		[name], 
-		count(medal) total_gold_medals 
-	from OLYMPICS_HISTORY 
-	where Medal = 'gold' 
-	group by [name] 
-	)
-select distinct 
-	t1.[name], 
-	oh.team, 
-	t1.total_gold_medals 
-from 
-	t1, OLYMPICS_HISTORY oh 
+select [name], count(medal) total_gold_medals 
+from OLYMPICS_HISTORY 
+where Medal = 'gold' 
+group by [name] )
+select distinct t1.[name], oh.team, t1.total_gold_medals 
+from t1, OLYMPICS_HISTORY oh 
 where oh.Name = t1.Name 
 order by total_gold_medals desc
 ```
@@ -350,19 +264,12 @@ order by total_gold_medals desc
 **SQL Query**
 ```sql
 with t1 as (
-	select 
-		[name], 
-		count(medal) total_gold_medals 
-	from OLYMPICS_HISTORY 
-	where Medal = 'gold' 
-	group by [name] 
-	)
-select distinct top 5   
-	t1.[name], 
-	oh.team, 
-	t1.total_gold_medals 
-from 
-	t1, OLYMPICS_HISTORY oh 
+select [name], count(medal) total_gold_medals 
+from OLYMPICS_HISTORY
+where Medal = 'gold' 
+group by [name] )
+select distinct top 5 t1.[name], oh.team, t1.total_gold_medals 
+from t1, OLYMPICS_HISTORY oh 
 where oh.Name = t1.Name 
 order by total_gold_medals desc
 ```
@@ -380,18 +287,12 @@ order by total_gold_medals desc
 **SQL Query**
 ```sql
 with t1 as (
-	select 
-		top 5 [name], 
-		count(medal) total_medals 
+select top 5 [name], count(medal) total_medals 
 from OLYMPICS_HISTORY 
 where Medal <> 'NA' 
 group by [Name]
-order by total_medals desc
-)
-select distinct
-	t1.[name], 
-	oh.team, 
-	t1.total_medals 
+order by total_medals desc)
+select distinct t1.[name], oh.team, t1.total_medals 
 from t1, OLYMPICS_HISTORY oh 
 where oh.[Name] = t1.[Name] 
 order by total_medals desc
