@@ -311,10 +311,7 @@ order by total_medals desc
 
 **SQL Query**
 ```sql
-select 
-	top 5 team, 
-	count(medal) total_medals, 
-	DENSE_RANK() over(order by count(medal) desc) Ranking  
+select top 5 team, count(medal) total_medals, DENSE_RANK() over(order by count(medal) desc) Ranking  
 from OLYMPICS_HISTORY 
 where medal <> 'NA' 
 group by team 
@@ -334,30 +331,14 @@ order by total_medals desc;
 
 **SQL Query**
 ```sql
-select nr.region as nation,
-       count(   case
-                    when medal = 'Gold' then
-                        1
-                end
-            ) gold_medals,
-       count(   case
-                    when medal = 'Silver' then
-                        1
-                end
-            ) silver_medals,
-       count(   case
-                    when medal = 'Bronze' then
-                        1
-                end
-            ) bronze_medals
+select nr.region as nation, count( case when medal = 'Gold' then 1 end) gold_medals,
+count( case when medal = 'Silver' then 1 end) silver_medals,
+count( case when medal = 'Bronze' then 1 end) bronze_medals
 from OLYMPICS_HISTORY_NOC_REGIONS nr,
-     OLYMPICS_HISTORY oh
-where oh.NOC = nr.NOC
-      and medal <> 'NA'
+OLYMPICS_HISTORY oh
+where oh.NOC = nr.NOC and medal <> 'NA'
 group by region
-order by gold_medals desc,
-         silver_medals desc,
-         bronze_medals desc ;     
+order by gold_medals desc, silver_medals desc, bronze_medals desc ;     
 
 ```
 **Sample Output:**
@@ -378,27 +359,13 @@ order by gold_medals desc,
 
 **SQL Query**
 ```sql
-select oh.Games as games,
-	   nr.region as nation,
-       count(   case
-                    when medal = 'Gold' then
-                        1
-                end
-            ) gold_medals,
-       count(   case
-                    when medal = 'Silver' then
-                        1
-                end
-            ) silver_medals,
-       count(   case
-                    when medal = 'Bronze' then
-                        1
-                end
-            ) bronze_medals
+select oh.Games as games, nr.region as nation,
+count(case when medal = 'Gold' then 1 end) gold_medals,
+count(case when medal = 'Silver' then 1 end) silver_medals,
+count(case when medal = 'Bronze' then 1 end) bronze_medals
 from OLYMPICS_HISTORY_NOC_REGIONS nr,
-     OLYMPICS_HISTORY oh
-where oh.NOC = nr.NOC
-      and medal <> 'NA'
+OLYMPICS_HISTORY oh
+where oh.NOC = nr.NOC and medal <> 'NA'
 group by region, Games
 order by games
 
@@ -526,7 +493,7 @@ from t1;
 **SQL Query**
 ```sql
 with t1 as (
-	select distinct 
+select distinct 
 		
 		nr.region as nations,
 		sum(case when medal = 'gold' then 1 else 0 end) as gold_medals,
